@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SignorJiovanniSaltingApp
 {
-    public sealed class CheeseHeadsMassInputFields
+    public sealed class CheeseHeadsMassInputFields: ICheeseHeadInput
     {
         private InputField[] _cheeseHeads = new InputField[5];
         public InputField[] CheeseHeadsInputFields => _cheeseHeads;
@@ -15,5 +15,10 @@ namespace SignorJiovanniSaltingApp
                 _cheeseHeads[i] = GameObject.FindGameObjectWithTag("CheeseHead" + (i + 1)).GetComponent<InputField>();
             }
         }
+    }
+
+    public interface ICheeseHeadInput
+    {
+        public InputField[] CheeseHeadsInputFields { get; }
     }
 }

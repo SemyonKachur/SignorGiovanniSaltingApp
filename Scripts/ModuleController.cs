@@ -5,11 +5,11 @@ namespace SignorJiovanniSaltingApp
 {
     public sealed class ModuleController
     {
-        private CheeseHeadsMassInputFields _cheeseHeadsMassIF;
-        private ResultTimeText _resultTimeText;
-        private TimeFields _timeFields;
-        private SaltingTimePerMassInputField _saltingTime;
-        private CalculateSaltingButtons _calculateSaltingButtons;
+        private ICheeseHeadInput _cheeseHeadsMassIF;
+        private IResultTimeText _resultTimeText;
+        private ITimeFields _timeFields;
+        private ISaltingTime _saltingTime;
+        private ICalculateButton _calculateSaltingButtons;
 
 
         public ModuleController()

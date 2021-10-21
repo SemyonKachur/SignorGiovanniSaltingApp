@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SignorJiovanniSaltingApp
 {
-    public sealed class TimeFields
+    public sealed class TimeFields : ITimeFields
     {
         private InputField _dateFieldIn;
         private InputField _dateFieldOut;
@@ -26,5 +26,11 @@ namespace SignorJiovanniSaltingApp
 
             _timeFieldsControlButtons = new TimeFieldsControlButtons(this);
         }
+    }
+
+    public interface ITimeFields
+    {
+        public InputField DateFieldIn { get; }
+        public InputField DateFieldOut { get; }
     }
 }

@@ -3,10 +3,11 @@ using UnityEngine.UI;
 
 namespace SignorJiovanniSaltingApp
 {
-    public sealed class ResultTimeText
+    public sealed class ResultTimeText : IResultTimeText
     {
         private Text _title;
         private Text[] _resultTimeText = new Text[5];
+        
         public Text[] ResuldTimeText => _resultTimeText;
         public Text Title => _title;
 
@@ -19,5 +20,11 @@ namespace SignorJiovanniSaltingApp
 
             _title = GameObject.FindGameObjectWithTag("Title").GetComponent<Text>();
         }
+    }
+
+    public interface IResultTimeText
+    {
+        public Text[] ResuldTimeText { get; }
+        public Text Title { get; }
     }
 }
